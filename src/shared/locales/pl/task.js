@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Siew',
   'active': 'Pobieranie',
   'waiting': 'Wstrzymane',
   'stopped': 'Zatrzymane',

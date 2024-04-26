@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Penanaman',
   'active': 'Mengunduh',
   'waiting': 'Mengunggu',
   'stopped': 'Terhenti',

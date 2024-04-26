@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'การปลูก" หรือ ',
   'active': 'การดาวน์โหลด',
   'waiting': 'กำลังรอ',
   'stopped': 'หยุดแล้ว',

@@ -1,4 +1,5 @@
 export default {
+  'seeding': '種まき',
   'active': 'ダウンロード中',
   'waiting': '待機中',
   'stopped': '一時停止中',

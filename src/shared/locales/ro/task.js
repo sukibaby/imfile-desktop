@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Semănat',
   'active': 'Se descarcă',
   'waiting': 'În aşteptare',
   'stopped': 'Oprite',

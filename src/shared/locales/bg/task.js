@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'засяване',
   'active':'Активен',
   'waiting':'чакане',
   'stopped':'спряно',

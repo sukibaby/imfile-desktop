@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'ekim',
   'active': 'İndiriliyor',
   'waiting': 'Bekleniyor',
   'stopped': 'Durdu',

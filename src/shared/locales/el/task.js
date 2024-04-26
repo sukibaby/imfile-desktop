@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Σπορά',
   'active': 'Γίνεται λήψη',
   'waiting': 'Σε αναμονή',
   'stopped': 'Σταματημένα',
