@@ -9,6 +9,10 @@
           <el-col :span="4" @click.native="() => nav('active')" :class="[status === 'active' ? 'active' : '']">
             <h4>{{ $t('task.active') }}</h4>
           </el-col>
+           <!-- TODO: LANGUAGE -->
+          <el-col :span="4" @click.native="() => nav('seeding')" :class="[status === 'seeding' ? 'active' : '']">
+            <h4>{{ $t('task.seeding') }}</h4>
+          </el-col>
           <el-col :span="4" @click.native="() => nav('waiting')" :class="[status === 'waiting' ? 'active' : '']">
             <h4>{{ $t('task.waiting') }}</h4>
           </el-col>
@@ -80,6 +84,11 @@
       }),
       subnavs () {
         return [
+          {
+            key: 'Seeding',
+            title: this.$t('task.seeding'),
+            route: '/task/seeding'
+          },
           {
             key: 'active',
             title: this.$t('task.active'),

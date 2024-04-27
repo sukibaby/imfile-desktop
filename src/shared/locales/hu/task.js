@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'vetés',
   'active': 'Letöltés',
   'waiting': 'Varakozás',
   'stopped': 'Lealitva',

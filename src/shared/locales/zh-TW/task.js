@@ -1,4 +1,5 @@
 export default {
+  'seeding': '播種中',
   'active': '下載中',
   'waiting': '等待中',
   'stopped': '已停止',

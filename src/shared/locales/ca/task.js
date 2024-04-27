@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'sembrar',
   'active': 'Descarregant',
   'waiting': 'Esperant',
   'stopped': 'Detinguda',

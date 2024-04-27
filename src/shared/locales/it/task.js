@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Semina',
   'active': 'In corso',
   'waiting': 'In Pausa',
   'stopped': 'Terminate',

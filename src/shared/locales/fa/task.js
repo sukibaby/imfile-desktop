@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'کاشت',
   'active': 'در حال بارگیری',
   'waiting': 'در انتظار',
   'stopped': 'متوقف شد',

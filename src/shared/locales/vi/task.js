@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'giống',
   'active': 'Đang tải về',
   'waiting': 'Đang chờ',
   'stopped': 'Ngừng',

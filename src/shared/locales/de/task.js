@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'das Aussäen',
   'active': 'Aktiv',
   'waiting': 'Warteschlange',
   'stopped': 'Gestoppt',
