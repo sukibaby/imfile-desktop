@@ -5,9 +5,9 @@ body {
 }
 
 body {
-  font-family: "Monospaced Number", "Chinese Quote", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Monospaced Number', 'Chinese Quote', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-variant: tabular-nums;
   font-size: $--font-size-medium;
 }
@@ -48,6 +48,9 @@ iframe {
 .clearfix {
   @include clearfix();
 }
+.mo-icon {
+  display: block !important;
+}
 
 /* Element UI
 -------------------------- */
@@ -57,7 +60,7 @@ iframe {
 
 .el-progress--line.is-text {
   .el-progress-bar__inner::before {
-    content: "";
+    content: '';
     opacity: 0;
     position: absolute;
     top: 0;
@@ -134,21 +137,21 @@ iframe {
   }
 }
 
-.panel-header .el-col-4{
+.panel-header .el-col-4 {
   padding: 10px;
   text-align: center;
   margin-right: 5px;
 }
-.panel-header .el-col-4.active{
+.panel-header .el-col-4.active {
   background-color: $--task-item-hover-border-color;
 }
-.panel-header .el-col-4:hover{
+.panel-header .el-col-4:hover {
   background-color: $--task-item-hover-border-color;
 }
 
-
-.el-form-item__content{
-  .el-textarea__inner,.el-input__inner{
+.el-form-item__content {
+  .el-textarea__inner,
+  .el-input__inner {
     background-color: $--background-color-gray !important;
     border: none !important;
     color: #eee;
@@ -160,27 +163,28 @@ iframe {
       color: #777;
     }
   }
-  .el-input-group__append{
+  .el-input-group__append {
     background-color: $--background-color-gray !important;
     border: none !important;
   }
-  .el-button.select-directory.el-button--default.el-button--mini{
+  .el-button.select-directory.el-button--default.el-button--mini {
     background-color: $--background-color-gray !important;
     border: none !important;
   }
-  .el-input-number__decrease.is-disabled{
+  .el-input-number__decrease.is-disabled {
     display: none !important;
   }
-  .el-input-number__increase{
+  .el-input-number__increase {
     display: none !important;
   }
-  .el-input-number__decrease{
+  .el-input-number__decrease {
     display: none !important;
   }
 }
 
 .upload-torrent {
-  .el-upload, .el-upload-dragger {
+  .el-upload,
+  .el-upload-dragger {
     background-color: $--background-color-gray !important;
   }
 }
@@ -270,7 +274,7 @@ iframe {
 
 .subnav-icon {
   padding: 2px;
-  height: 16px;
+  // height: 16px;
   margin-right: 12px;
 
   svg {
@@ -292,7 +296,7 @@ iframe {
     border-bottom: none;
     user-select: none;
 
-    .panel-row{
+    .panel-row {
       h4 {
         margin: 0;
         color: $--subnav-title-color;
@@ -301,7 +305,7 @@ iframe {
         line-height: 24px;
       }
       .active {
-        h4{
+        h4 {
           font-size: 13px;
           font-weight: normal;
           color: $--app-text-select-color;
@@ -314,8 +318,6 @@ iframe {
     padding: 0;
     height: 100%;
   }
-  
-
 }
 
 .form-actions {
@@ -339,7 +341,7 @@ iframe {
   line-height: 0;
   border: 1px solid $--task-detail-box-border;
   border-radius: $--border-radius-base;
-  &> svg {
+  & > svg {
     display: block;
     margin: 0 auto;
   }
@@ -352,23 +354,27 @@ iframe {
 
 .task-state-actions {
   .task-state-ul {
-    .task-action-start, .task-action-stop {
+    svg{
+      color: $--subnav-title-color;
+    }
+    .task-action-start,
+    .task-action-stop {
       background: $--dk--background-color-gray;
     }
   }
 }
-.task-actions svg{
+.task-actions svg {
   color: $--subnav-title-color;
 }
-.task-header .el-col-4{
+.task-header .el-col-4 {
   padding: 10px;
   text-align: center;
   margin-right: 5px;
 }
-.task-header .el-col-4.active{
+.task-header .el-col-4.active {
   background-color: $--task-item-hover-border-color;
 }
-.task-header .el-col-4:hover{
+.task-header .el-col-4:hover {
   background-color: $--task-item-hover-border-color;
 }
 .el-switch__core,
@@ -377,9 +383,9 @@ iframe {
   background-color: $--background-color-gray;
 }
 
-@media only screen and (max-width:567px) {
+@media only screen and (max-width: 567px) {
   .hidden-xs-only {
-    display:none !important
+    display: none !important;
   }
 }
 

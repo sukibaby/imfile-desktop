@@ -204,9 +204,7 @@ export default class Api {
           const result = mergeTaskResult(data)
           resolve(
             result.filter(
-              (list) =>
-                list.status === 'active' &&
-                list.completedLength !== list.totalLength
+              (list) => list.completedLength !== list.totalLength
             )
           )
         })
@@ -259,6 +257,31 @@ export default class Api {
         })
         .catch((err) => {
           console.log('[imFile] fetch seeding task list fail:', err)
+          reject(err)
+        })
+    })
+  }
+
+  fetchAllTaskList (params = {}) {
+    const { offset = 0, num = 20, keys } = params
+    const activeArgs = compactUndefined([keys])
+    const waitingArgs = compactUndefined([offset, num, keys])
+    return new Promise((resolve, reject) => {
+      this.client
+        .multicall([
+          ['aria2.tellActive', ...activeArgs],
+          ['aria2.tellWaiting', ...waitingArgs],
+          ['aria2.tellStopped', ...waitingArgs]
+        ])
+        .then((data) => {
+          console.log('[imFile] fetch downloading task list data:', data)
+          // const result = mergeTaskResult(data)
+          resolve(
+            data
+          )
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch downloading task list fail:', err)
           reject(err)
         })
     })

@@ -289,14 +289,20 @@
   }
 
   .el-button {
-    background-color: $--color-text-primary;
-    border-color: #606060;
-    color: #e6e6e6;
+    background-color: $--dk--background-color-gray;
+    border: none;
+    color: #aaa;
     &:hover,
     &:focus {
       color: $--color-primary-light-4;
       border-color: #606060;
       background-color: #333;
+      svg{
+        color: $--color-primary-light-4;
+      }
+    }
+    svg{
+      color: #aaa;
     }
   }
 
@@ -481,9 +487,9 @@
 
   // .task-state-actions {
   //   .task-state-ul {
-  //     .task-action-start,
-  //     .task-action-stop {
-  //       background: $--dk--background-color-gray;
+  //     svg {
+  //       // color: $--dk-panel-title-color;
+  //       color:#aaa;
   //     }
   //   }
   // }

@@ -12,6 +12,12 @@ const state = {
   currentTaskPeers: [],
   seedingList: [],
   taskList: [],
+  count: {
+    downloading: 0,
+    seeding: 0,
+    waiting: 0,
+    stoped: 0
+  },
   selectedGidList: []
 }
 
@@ -48,6 +54,9 @@ const mutations = {
   },
   UPDATE_CURRENT_TASK_PEERS (state, peers) {
     state.currentTaskPeers = peers
+  },
+  UPDATE_COUNT (state, counts) {
+    state.count = counts
   }
 }
 
@@ -57,11 +66,30 @@ const actions = {
     commit('UPDATE_SELECTED_GID_LIST', [])
     dispatch('fetchList')
   },
+  fetchAllList ({ commit }) {
+    return api.fetchAllTaskList().then(data => {
+      const downloadingList = data[0][0].concat(data[1][0])
+      const downloading = downloadingList.filter((item) => item.completedLength !== item.totalLength).length
+      const seeding = downloadingList.filter((item) => item.completedLength === item.totalLength).length
+      const waiting = data[1][0].length
+      const stoped = data[2][0].length
+
+      commit('UPDATE_COUNT', {
+        downloading,
+        seeding,
+        waiting,
+        stoped
+      })
+    })
+  },
   fetchList ({ commit, state }) {
     return api.fetchTaskList({ type: state.currentList })
       .then((data) => {
         commit('UPDATE_TASK_LIST', data)
-
+        commit('UPDATE_COUNT', {
+          ...state.count,
+          [state.currentList === 'active' ? 'downloading' : state.currentList]: data.length
+        })
         const { selectedGidList } = state
         const gids = data.map((task) => task.gid)
         const list = intersection(selectedGidList, gids)

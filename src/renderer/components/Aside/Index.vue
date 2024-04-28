@@ -3,19 +3,19 @@
     <div class="aside-inner">
       <mo-logo-mini />
       <ul class="menu top-menu">
-        <li @click="nav('/task')" class="non-draggable">
-          <mo-icon name="menu-task" width="24" height="24" />
+        <li @click="nav('/task')" class="flex items-center justify-center non-draggable">
+          <mo-icon name="menu-task" width="30" height="30" />
         </li>
-        <li @click="showAddTask()" class="non-draggable">
-          <mo-icon name="menu-add" width="24" height="24" />
+        <li @click="showAddTask()" class="flex items-center justify-center non-draggable">
+          <mo-icon name="menu-add" width="30" height="30" />
         </li>
       </ul>
       <ul class="menu bottom-menu">
-        <li @click="nav('/preference')" class="non-draggable">
-          <mo-icon name="menu-preference" width="24" height="24" />
+        <li @click="nav('/preference')" class="flex items-center justify-center non-draggable">
+          <mo-icon name="menu-preference" width="30" height="30" />
         </li>
-        <li @click="showAboutPanel" class="non-draggable">
-          <mo-icon name="menu-about" width="24" height="24" />
+        <li @click="showAboutPanel" class="flex items-center justify-center non-draggable">
+          <mo-icon name="menu-about" width="30" height="30" />
         </li>
       </ul>
     </div>
