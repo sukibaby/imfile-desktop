@@ -204,9 +204,7 @@ export default class Api {
           const result = mergeTaskResult(data)
           resolve(
             result.filter(
-              (list) =>
-                list.status === 'active' &&
-                list.completedLength !== list.totalLength
+              (list) => list.completedLength !== list.totalLength
             )
           )
         })
