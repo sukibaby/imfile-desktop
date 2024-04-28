@@ -5,7 +5,7 @@
     </el-aside> -->
     <el-container class="content panel" direction="vertical">
       <el-header class="panel-header" height="84">
-        <el-row class="panel-row">
+        <el-row class="panel-row task-header">
           <el-col :span="4" @click.native="() => nav('active')" :class="[status === 'active' ? 'active' : '']">
             <h4>{{ $t('task.active') }}</h4>
           </el-col>

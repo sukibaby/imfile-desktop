@@ -134,6 +134,19 @@ iframe {
   }
 }
 
+.panel-header .el-col-4{
+  padding: 10px;
+  text-align: center;
+  margin-right: 5px;
+}
+.panel-header .el-col-4.active{
+  background-color: $--task-item-hover-border-color;
+}
+.panel-header .el-col-4:hover{
+  background-color: $--task-item-hover-border-color;
+}
+
+
 .el-form-item__content{
   .el-textarea__inner,.el-input__inner{
     background-color: $--background-color-gray !important;
@@ -346,6 +359,17 @@ iframe {
 }
 .task-actions svg{
   color: $--subnav-title-color;
+}
+.task-header .el-col-4{
+  padding: 10px;
+  text-align: center;
+  margin-right: 5px;
+}
+.task-header .el-col-4.active{
+  background-color: $--task-item-hover-border-color;
+}
+.task-header .el-col-4:hover{
+  background-color: $--task-item-hover-border-color;
 }
 .el-switch__core,
 .el-checkbox__inner {
