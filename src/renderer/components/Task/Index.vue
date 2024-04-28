@@ -1,15 +1,14 @@
 <template>
   <el-container class="main panel" direction="horizontal">
-    <!-- <el-aside width="200px" class="subnav hidden-xs-only">
+    <el-aside width="200px" class="subnav hidden-xs-only">
       <mo-task-subnav :current="status" />
-    </el-aside> -->
+    </el-aside>
     <el-container class="content panel" direction="vertical">
-      <el-header class="panel-header" height="84">
+      <!-- <el-header class="panel-header" height="84">
         <el-row class="panel-row task-header">
           <el-col :span="4" @click.native="() => nav('active')" :class="[status === 'active' ? 'active' : '']">
             <h4>{{ $t('task.active') }}</h4>
           </el-col>
-           <!-- TODO: LANGUAGE -->
           <el-col :span="4" @click.native="() => nav('seeding')" :class="[status === 'seeding' ? 'active' : '']">
             <h4>{{ $t('task.seeding') }}</h4>
           </el-col>
@@ -20,9 +19,9 @@
             <h4>{{ $t('task.stopped') }}</h4>
           </el-col>
         </el-row>
-        <!-- <mo-subnav-switcher :title="title" :subnavs="subnavs" class="hidden-sm-and-up" /> -->
+        <mo-subnav-switcher :title="title" :subnavs="subnavs" class="hidden-sm-and-up" />
         <mo-task-actions />
-      </el-header>
+      </el-header> -->
       <el-header class="panel-header" height="50">
         <el-row class="panel-row">
           <el-col :span="7">
@@ -401,6 +400,7 @@
     },
     created () {
       this.changeCurrentList()
+      this.$store.dispatch('task/fetchAllList')
     },
     mounted () {
       commands.on('pause-task', this.handlePauseTask)

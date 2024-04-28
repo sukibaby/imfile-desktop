@@ -262,6 +262,31 @@ export default class Api {
     })
   }
 
+  fetchAllTaskList (params = {}) {
+    const { offset = 0, num = 20, keys } = params
+    const activeArgs = compactUndefined([keys])
+    const waitingArgs = compactUndefined([offset, num, keys])
+    return new Promise((resolve, reject) => {
+      this.client
+        .multicall([
+          ['aria2.tellActive', ...activeArgs],
+          ['aria2.tellWaiting', ...waitingArgs],
+          ['aria2.tellStopped', ...waitingArgs]
+        ])
+        .then((data) => {
+          console.log('[imFile] fetch downloading task list data:', data)
+          // const result = mergeTaskResult(data)
+          resolve(
+            data
+          )
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch downloading task list fail:', err)
+          reject(err)
+        })
+    })
+  }
+
   fetchTaskList (params = {}) {
     const { type } = params
     switch (type) {

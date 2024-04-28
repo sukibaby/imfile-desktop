@@ -1,18 +1,33 @@
 <template>
     <div class="task-state-actions">
         <ul class="task-state-ul">
-            <li @click="onResumeAllClick" class="task-action-start">
-                <i class="task-action">
-                    <mo-icon name="task-play" width="15" height="15" />
-                </i>
-                <span>{{ $t('task.task-all-start') }}</span>
-            </li>
-            <li @click="onPauseAllClick" class="task-action-stop">
-                <i class="task-action">
-                    <mo-icon name="task-pause" width="15" height="15" />
-                </i>
-                <span>{{ $t('task.task-all-stop') }}</span>
-            </li>
+          <li @click="onRefreshClick" class="mr-2 refresh_btn">
+            <mo-icon name="refresh" width="30" height="30" :spin="refreshing" />
+          </li>
+          <el-button @click="onResumeAllClick"><div class="flex items-center justify-center">
+            <i class="task-action">
+                  <mo-icon name="task-play" width="15" height="15" />
+              </i>
+              <span>{{ $t('task.task-all-start') }}</span>
+          </div></el-button>
+          <el-button @click="onPauseAllClick"><div class="flex items-center justify-center">
+            <i class="task-action">
+                  <mo-icon name="task-pause" width="15" height="15" />
+              </i>
+              <span>{{ $t('task.task-all-stop') }}</span>
+          </div></el-button>
+          <!-- <li @click="onResumeAllClick" class="task-action-start">
+              <i class="task-action">
+                  <mo-icon name="task-play" width="15" height="15" />
+              </i>
+              <span>{{ $t('task.task-all-start') }}</span>
+          </li> -->
+          <!-- <li @click="onPauseAllClick" class="task-action-stop">
+              <i class="task-action">
+                  <mo-icon name="task-pause" width="15" height="15" />
+              </i>
+              <span>{{ $t('task.task-all-stop') }}</span>
+          </li> -->
         </ul>
     </div>
 </template>
@@ -64,6 +79,18 @@
               this.$msg.error(this.$t('task.pause-all-task-fail'))
             }
           })
+      },
+      onRefreshClick () {
+        this.refreshSpin()
+        this.$store.dispatch('task/fetchList')
+      },
+      refreshSpin () {
+        this.t && clearTimeout(this.t)
+
+        this.refreshing = true
+        this.t = setTimeout(() => {
+          this.refreshing = false
+        }, 500)
       }
     }
   }
@@ -115,5 +142,12 @@
             }
         }
     }
+}
+.theme-dark {
+  .refresh_btn svg{
+    &:hover {
+      color: $--color-primary-light-4;
+    }
+  }
 }
 </style>
