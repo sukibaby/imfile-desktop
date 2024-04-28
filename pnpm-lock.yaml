@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       node-fetch:
-        specifier: ^2.6.1
-        version: 2.7.0
+        specifier: ^3.0.0
+        version: 3.3.2
       ws:
         specifier: ^8.13.0
         version: 8.16.0
