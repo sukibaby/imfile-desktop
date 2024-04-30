@@ -115,8 +115,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       electron-log:
-        specifier: ^4.4.8
-        version: 4.4.8
+        specifier: ^5.0.0
+        version: 5.1.2
       electron-store:
         specifier: ^8.1.0
         version: 8.2.0
@@ -2297,8 +2297,9 @@ packages:
   electron-is@3.0.0:
     resolution: {integrity: sha512-aQv1y3WrDZ+mtO8acbhiiip/8fa0Et7cvZyvlqJm2H7fih4hiJWEFRyYxzLgDG2kmiLdF8l3y5tbek5JFOPQkQ==}
 
-  electron-log@4.4.8:
-    resolution: {integrity: sha512-QQ4GvrXO+HkgqqEOYbi+DHL7hj5JM+nHi/j+qrN9zeeXVKy8ZABgbu4CnG+BBqDZ2+tbeq9tUC4DZfIWFU5AZA==}
+  electron-log@5.1.2:
+    resolution: {integrity: sha512-Cpg4hAZ27yM9wzE77c4TvgzxzavZ+dVltCczParXN+Vb3jocojCSAuSMCVOI9fhFuuOR+iuu3tZLX1cu0y0kgQ==}
+    engines: {node: '>= 14'}
 
   electron-publish@24.13.1:
     resolution: {integrity: sha512-2ZgdEqJ8e9D17Hwp5LEq5mLQPjqU3lv/IALvgp+4W8VeNhryfGhYEQC/PgDPMrnWUp+l60Ou5SJLsu+k4mhQ8A==}
@@ -7467,7 +7468,7 @@ snapshots:
       electron-is-dev: 0.3.0
       semver: 5.7.2
 
-  electron-log@4.4.8: {}
+  electron-log@5.1.2: {}
 
   electron-publish@24.13.1:
     dependencies:
