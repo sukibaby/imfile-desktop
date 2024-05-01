@@ -181,11 +181,11 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       sass:
-        specifier: 1.75.0
-        version: 1.75.0
+        specifier: 1.76.0
+        version: 1.76.0
       sass-loader:
         specifier: ^12.0.0
-        version: 12.6.0(sass@1.75.0)(webpack@5.91.0(webpack-cli@5.1.4))
+        version: 12.6.0(sass@1.76.0)(webpack@5.91.0(webpack-cli@5.1.4))
       style-loader:
         specifier: ^3.3.2
         version: 3.3.4(webpack@5.91.0(webpack-cli@5.1.4))
@@ -4349,8 +4349,8 @@ packages:
       sass-embedded:
         optional: true
 
-  sass@1.75.0:
-    resolution: {integrity: sha512-ShMYi3WkrDWxExyxSZPst4/okE9ts46xZmJDSawJQrnte7M1V9fScVB+uNXOVKRBt0PggHOwoZcn8mYX4trnBw==}
+  sass@1.76.0:
+    resolution: {integrity: sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -9623,15 +9623,15 @@ snapshots:
     dependencies:
       truncate-utf8-bytes: 1.0.2
 
-  sass-loader@12.6.0(sass@1.75.0)(webpack@5.91.0(webpack-cli@5.1.4)):
+  sass-loader@12.6.0(sass@1.76.0)(webpack@5.91.0(webpack-cli@5.1.4)):
     dependencies:
       klona: 2.0.6
       neo-async: 2.6.2
       webpack: 5.91.0(webpack-cli@5.1.4)
     optionalDependencies:
-      sass: 1.75.0
+      sass: 1.76.0
 
-  sass@1.75.0:
+  sass@1.76.0:
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.5
