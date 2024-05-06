@@ -16,6 +16,7 @@
               </i>
               <span>{{ $t('task.task-all-stop') }}</span>
           </div></el-button>
+          <mo-batch-delete-task-btn v-if="selectedGidListCount > 1"/>
           <!-- <li @click="onResumeAllClick" class="task-action-start">
               <i class="task-action">
                   <mo-icon name="task-play" width="15" height="15" />
@@ -35,11 +36,13 @@
 <script>
   import { mapState } from 'vuex'
   import { bytesToSize, timeFormat } from '@shared/utils'
+  import BatchDeleteTaskBtn from '@/components/Task/BatchDeleteTaskBtn.vue'
   import '@/components/Icons/task-pause'
   import '@/components/Icons/task-play'
   export default {
     name: 'state-task-actions',
     components: {
+      [BatchDeleteTaskBtn.name]: BatchDeleteTaskBtn
     },
     props: ['task'],
     data () {

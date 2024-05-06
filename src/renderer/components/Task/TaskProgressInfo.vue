@@ -1,5 +1,5 @@
 <template>
-  <el-row class="task-progress-info">
+  <el-row class="w-1/2 task-progress-info">
     <el-col
       class="task-progress-info-left"
       :xs="12"
