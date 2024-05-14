@@ -47,7 +47,7 @@ importers:
         version: 1.2.0
       '@electron/remote':
         specifier: ^2.1.2
-        version: 2.1.2(electron@30.0.1)
+        version: 2.1.2(electron@30.0.4)
       '@motrix/multispinner':
         specifier: ^0.2.4
         version: 0.2.4
@@ -104,7 +104,7 @@ importers:
         version: 6.1.1
       electron:
         specifier: ^30.0.0
-        version: 30.0.1
+        version: 30.0.4
       electron-builder:
         specifier: ^24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -203,7 +203,7 @@ importers:
         version: 1.0.6
       vue-loader:
         specifier: ^15.10.1
-        version: 15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.10)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4))
+        version: 15.11.1(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.10)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4))
       vue-router:
         specifier: ^3.6.5
         version: 3.6.5(vue@2.7.16)
@@ -1133,8 +1133,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@20.12.7':
-    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
+  '@types/node@20.12.11':
+    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
 
   '@types/plist@3.0.5':
     resolution: {integrity: sha512-E6OCaRmAe4WDmWNsL/9RMqdkkzDCY1etutkflWk4c+AcjDU07Pcz1fQwTX0TQz+Pxqn9i4L1TU3UFpjnrcDgxA==}
@@ -2335,8 +2335,8 @@ packages:
   electron-updater@6.1.8:
     resolution: {integrity: sha512-hhOTfaFAd6wRHAfUaBhnAOYc+ymSGCWJLtFkw4xJqOvtpHmIdNHnXDV9m1MHC+A6q08Abx4Ykgyz/R5DGKNAMQ==}
 
-  electron@30.0.1:
-    resolution: {integrity: sha512-iwxkI/n2wBd29NH7TH0ZY8aWGzCoKpzJz+D10u7aGSJi1TV6d4MSM3rWyKvT/UkAHkTKOEgYfUyCa2vWQm8L0g==}
+  electron@30.0.4:
+    resolution: {integrity: sha512-z8tGQeiVM6CHj0t8PKWVhAB4FZTRNN0vSrd1jA4edX1aOjBztddk4d0Gyw91pQb4arIVf2RGPu0hYbHG2+vDcA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -2867,6 +2867,10 @@ packages:
 
   globalthis@1.0.3:
     resolution: {integrity: sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA==}
+    engines: {node: '>= 0.4'}
+
+  globalthis@1.0.4:
+    resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
 
   globby@11.1.0:
@@ -4385,6 +4389,11 @@ packages:
 
   semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.6.2:
+    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -5957,9 +5966,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/remote@2.1.2(electron@30.0.1)':
+  '@electron/remote@2.1.2(electron@30.0.4)':
     dependencies:
-      electron: 30.0.1
+      electron: 30.0.4
 
   '@electron/universal@1.5.1':
     dependencies:
@@ -6020,7 +6029,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
@@ -6128,27 +6137,27 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/cacheable-request@6.0.3':
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       '@types/responselike': 1.0.3
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.0
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/debug@4.1.12':
     dependencies:
@@ -6168,7 +6177,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.0':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -6182,7 +6191,7 @@ snapshots:
 
   '@types/fs-extra@9.0.13':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/html-minifier-terser@6.1.0': {}
 
@@ -6192,7 +6201,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -6210,7 +6219,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/mime@1.3.5': {}
 
@@ -6218,15 +6227,15 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
-  '@types/node@20.12.7':
+  '@types/node@20.12.11':
     dependencies:
       undici-types: 5.26.5
 
   '@types/plist@3.0.5':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       xmlbuilder: 15.1.1
     optional: true
 
@@ -6236,14 +6245,14 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/retry@0.12.0': {}
 
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -6252,19 +6261,19 @@ snapshots:
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       '@types/send': 0.17.4
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/verror@1.10.10':
     optional: true
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -6274,7 +6283,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
     optional: true
 
   '@vue/compiler-sfc@2.7.16':
@@ -7554,10 +7563,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@30.0.1:
+  electron@30.0.4:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -8231,7 +8240,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.6.0
+      semver: 7.6.2
       serialize-error: 7.0.1
     optional: true
 
@@ -8244,6 +8253,12 @@ snapshots:
   globalthis@1.0.3:
     dependencies:
       define-properties: 1.2.1
+
+  globalthis@1.0.4:
+    dependencies:
+      define-properties: 1.2.1
+      gopd: 1.0.1
+    optional: true
 
   globby@11.1.0:
     dependencies:
@@ -8627,7 +8642,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -8635,13 +8650,13 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.11
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -9590,7 +9605,7 @@ snapshots:
     dependencies:
       boolean: 3.2.0
       detect-node: 2.1.0
-      globalthis: 1.0.3
+      globalthis: 1.0.4
       json-stringify-safe: 5.0.1
       semver-compare: 1.0.0
       sprintf-js: 1.1.3
@@ -9669,6 +9684,9 @@ snapshots:
   semver@7.6.0:
     dependencies:
       lru-cache: 6.0.0
+
+  semver@7.6.2:
+    optional: true
 
   send@0.18.0:
     dependencies:
@@ -10203,7 +10221,7 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(@vue/compiler-sfc@2.7.16)(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.10)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4)):
+  vue-loader@15.11.1(css-loader@7.1.1(webpack@5.91.0(webpack-cli@5.1.4)))(ejs@3.1.10)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@5.91.0(webpack-cli@5.1.4)):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(ejs@3.1.10)(lodash@4.17.21)
       css-loader: 7.1.1(webpack@5.91.0(webpack-cli@5.1.4))
@@ -10213,7 +10231,6 @@ snapshots:
       vue-style-loader: 4.1.3
       webpack: 5.91.0(webpack-cli@5.1.4)
     optionalDependencies:
-      '@vue/compiler-sfc': 2.7.16
       vue-template-compiler: 2.7.16
     transitivePeerDependencies:
       - arc-templates
