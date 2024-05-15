@@ -1,6 +1,6 @@
 {
   "name": "imFile",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A full-featured download manager",
   "homepage": "https://imfile.io",
   "author": {
@@ -34,10 +34,10 @@
     "postinstall": "electron-builder install-app-deps && npm run lint:fix"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
-    "node-fetch": "^3.0.0",
+    "node-fetch": "^2.7.0",
     "ws": "^8.13.0"
   },
   "devDependencies": {

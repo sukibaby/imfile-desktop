@@ -53,7 +53,7 @@
     methods: {
       selectData (gid) {
         const selectedGidList = this.$store.state.task.selectedGidList
-        if(selectedGidList.includes(gid)){
+        if (selectedGidList.includes(gid)) {
           this.$store.dispatch('task/selectTasks', pull(selectedGidList, gid))
         } else {
           this.$store.dispatch('task/selectTasks', selectedGidList.concat(gid))
