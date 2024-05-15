@@ -41,7 +41,7 @@ importers:
         version: 1.2.8
       '@electron/notarize':
         specifier: ^2.0.0
-        version: 2.3.0
+        version: 2.3.2
       '@electron/osx-sign':
         specifier: ^1.0.4
         version: 1.2.0
@@ -915,8 +915,8 @@ packages:
     resolution: {integrity: sha512-aL+bFMIkpR0cmmj5Zgy0LMKEpgy43/hw5zadEArgmAMWWlKc5buwFvFT9G/o/YJkvXAJm5q3iuTuLaiaXW39sg==}
     engines: {node: '>= 10.0.0'}
 
-  '@electron/notarize@2.3.0':
-    resolution: {integrity: sha512-EiTBU0BwE7HZZjAG1fFWQaiQpCuPrVGn7jPss1kUjD6eTTdXXd29RiZqEqkgN7xqt/Pgn4g3I7Saqovanrfj3w==}
+  '@electron/notarize@2.3.2':
+    resolution: {integrity: sha512-zfayxCe19euNwRycCty1C7lF7snk9YwfRpB5M8GLr1a4ICH63znxaPNAubrMvj0yDvVozqfgsdYpXVUnpWBDpg==}
     engines: {node: '>= 10.0.0'}
 
   '@electron/osx-sign@1.0.5':
@@ -5936,7 +5936,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/notarize@2.3.0':
+  '@electron/notarize@2.3.2':
     dependencies:
       debug: 4.3.4
       fs-extra: 9.1.0
