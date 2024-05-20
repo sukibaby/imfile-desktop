@@ -59,7 +59,7 @@ importers:
         version: 0.15.2(i18next@23.11.4)(vue@2.7.16)
       '@vue/eslint-config-standard':
         specifier: ^8.0.0
-        version: 8.0.1(eslint-plugin-vue@9.25.0(eslint@7.32.0))(eslint@7.32.0)
+        version: 8.0.1(eslint-plugin-vue@9.26.0(eslint@7.32.0))(eslint@7.32.0)
       ajv:
         specifier: ^8.12.0
         version: 8.13.0
@@ -146,7 +146,7 @@ importers:
         version: 6.1.1(eslint@7.32.0)
       eslint-plugin-vue:
         specifier: ^9.12.0
-        version: 9.25.0(eslint@7.32.0)
+        version: 9.26.0(eslint@7.32.0)
       eslint-webpack-plugin:
         specifier: ^4.0.1
         version: 4.1.0(eslint@7.32.0)(webpack@5.91.0(webpack-cli@5.1.4))
@@ -2529,8 +2529,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
 
-  eslint-plugin-vue@9.25.0:
-    resolution: {integrity: sha512-tDWlx14bVe6Bs+Nnh3IGrD+hb11kf2nukfm6jLsmJIhmiRQ1SUaksvwY9U5MvPB0pcrg0QK0xapQkfITs3RKOA==}
+  eslint-plugin-vue@9.26.0:
+    resolution: {integrity: sha512-eTvlxXgd4ijE1cdur850G6KalZqk65k1JKoOI2d1kT3hr8sPD07j1q98FRFdNnpxBELGPWxZmInxeHGF/GxtqQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -6369,7 +6369,7 @@ snapshots:
       - walrus
       - whiskers
 
-  '@vue/eslint-config-standard@8.0.1(eslint-plugin-vue@9.25.0(eslint@7.32.0))(eslint@7.32.0)':
+  '@vue/eslint-config-standard@8.0.1(eslint-plugin-vue@9.26.0(eslint@7.32.0))(eslint@7.32.0)':
     dependencies:
       eslint: 7.32.0
       eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(eslint@7.32.0))(eslint-plugin-n@15.7.0(eslint@7.32.0))(eslint-plugin-promise@6.1.1(eslint@7.32.0))(eslint@7.32.0)
@@ -6378,7 +6378,7 @@ snapshots:
       eslint-plugin-import: 2.29.1(eslint@7.32.0)
       eslint-plugin-n: 15.7.0(eslint@7.32.0)
       eslint-plugin-promise: 6.1.1(eslint@7.32.0)
-      eslint-plugin-vue: 9.25.0(eslint@7.32.0)
+      eslint-plugin-vue: 9.26.0(eslint@7.32.0)
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-typescript
@@ -6608,7 +6608,7 @@ snapshots:
       minimatch: 5.1.6
       read-config-file: 6.3.2
       sanitize-filename: 1.6.3
-      semver: 7.6.0
+      semver: 7.6.2
       tar: 6.2.1
       temp-file: 3.4.0
     transitivePeerDependencies:
@@ -7826,7 +7826,7 @@ snapshots:
     dependencies:
       eslint: 7.32.0
 
-  eslint-plugin-vue@9.25.0(eslint@7.32.0):
+  eslint-plugin-vue@9.26.0(eslint@7.32.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@7.32.0)
       eslint: 7.32.0
@@ -7834,7 +7834,7 @@ snapshots:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.16
-      semver: 7.6.0
+      semver: 7.6.2
       vue-eslint-parser: 9.4.2(eslint@7.32.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -9785,7 +9785,7 @@ snapshots:
 
   simple-update-notifier@2.0.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
 
   slash@3.0.0: {}
 
@@ -10223,7 +10223,7 @@ snapshots:
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.6.0
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
 
