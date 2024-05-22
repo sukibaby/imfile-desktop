@@ -34,7 +34,6 @@
           <mo-task-progress-info :task="task" />
           <mo-task-item-actions mode="LIST" :task="task" />
         </div>
-        
       </el-col>
     </el-row>
   </div>

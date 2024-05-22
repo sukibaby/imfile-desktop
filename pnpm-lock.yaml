@@ -44,10 +44,10 @@ importers:
         version: 2.3.2
       '@electron/osx-sign':
         specifier: ^1.0.4
-        version: 1.2.0
+        version: 1.3.0
       '@electron/remote':
         specifier: ^2.1.2
-        version: 2.1.2(electron@30.0.4)
+        version: 2.1.2(electron@30.0.6)
       '@motrix/multispinner':
         specifier: ^0.2.4
         version: 0.2.4
@@ -56,10 +56,10 @@ importers:
         version: 0.3.4
       '@panter/vue-i18next':
         specifier: ^0.15.2
-        version: 0.15.2(i18next@23.11.4)(vue@2.7.16)
+        version: 0.15.2(i18next@23.11.5)(vue@2.7.16)
       '@vue/eslint-config-standard':
         specifier: ^8.0.0
-        version: 8.0.1(eslint-plugin-vue@9.25.0(eslint@7.32.0))(eslint@7.32.0)
+        version: 8.0.1(eslint-plugin-vue@9.26.0(eslint@7.32.0))(eslint@7.32.0)
       ajv:
         specifier: ^8.12.0
         version: 8.13.0
@@ -68,7 +68,7 @@ importers:
         version: 10.4.19(postcss@8.4.38)
       axios:
         specifier: ^1.6.8
-        version: 1.6.8
+        version: 1.7.1
       babel-loader:
         specifier: ^9.1.2
         version: 9.1.3(@babel/core@7.24.5)(webpack@5.91.0(webpack-cli@5.1.4))
@@ -104,7 +104,7 @@ importers:
         version: 6.1.1
       electron:
         specifier: ^30.0.0
-        version: 30.0.4
+        version: 30.0.6
       electron-builder:
         specifier: ^24.13.3
         version: 24.13.3(electron-builder-squirrel-windows@24.13.3(dmg-builder@24.13.3))
@@ -146,7 +146,7 @@ importers:
         version: 6.1.1(eslint@7.32.0)
       eslint-plugin-vue:
         specifier: ^9.12.0
-        version: 9.25.0(eslint@7.32.0)
+        version: 9.26.0(eslint@7.32.0)
       eslint-webpack-plugin:
         specifier: ^4.0.1
         version: 4.1.0(eslint@7.32.0)(webpack@5.91.0(webpack-cli@5.1.4))
@@ -158,7 +158,7 @@ importers:
         version: 5.6.0(webpack@5.91.0(webpack-cli@5.1.4))
       i18next:
         specifier: ^23.11.2
-        version: 23.11.4
+        version: 23.11.5
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -924,8 +924,8 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  '@electron/osx-sign@1.2.0':
-    resolution: {integrity: sha512-kOA3bAeDXFMj2JHj0R2fk/IT92qpu3tZHwM4l/PdksAuy7eA3/23QktCiAoQICwPdtxCYdt9ZLimKvnNyUpdSQ==}
+  '@electron/osx-sign@1.3.0':
+    resolution: {integrity: sha512-TEXhxlYSDRr9JWK5nWdOv5MtuUdaZ412uxIIEQ0hLt80o0HYWtQJBlW5QmrQDMtebzATaOjKG9UfCzLyA90zWQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -1133,8 +1133,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@20.12.11':
-    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==}
+  '@types/node@20.12.12':
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
 
   '@types/plist@3.0.5':
     resolution: {integrity: sha512-E6OCaRmAe4WDmWNsL/9RMqdkkzDCY1etutkflWk4c+AcjDU07Pcz1fQwTX0TQz+Pxqn9i4L1TU3UFpjnrcDgxA==}
@@ -1475,8 +1475,8 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
+  axios@1.7.1:
+    resolution: {integrity: sha512-+LV37nQcd1EpFalkXksWNBiA17NZ5m5/WspmHGmZmdx1qBOg/VNq/c4eRJiA9VQQHBOs+N0ZhhdU10h2TyNK7Q==}
 
   babel-helper-vue-jsx-merge-props@2.0.3:
     resolution: {integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==}
@@ -2335,8 +2335,8 @@ packages:
   electron-updater@6.1.8:
     resolution: {integrity: sha512-hhOTfaFAd6wRHAfUaBhnAOYc+ymSGCWJLtFkw4xJqOvtpHmIdNHnXDV9m1MHC+A6q08Abx4Ykgyz/R5DGKNAMQ==}
 
-  electron@30.0.4:
-    resolution: {integrity: sha512-z8tGQeiVM6CHj0t8PKWVhAB4FZTRNN0vSrd1jA4edX1aOjBztddk4d0Gyw91pQb4arIVf2RGPu0hYbHG2+vDcA==}
+  electron@30.0.6:
+    resolution: {integrity: sha512-PkhEPFdpYcTzjAO3gMHZ+map7g2+xCrMDedo/L1i0ir2BRXvAB93IkTJX497U6Srb/09r2cFt+k20VPNVCdw3Q==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -2529,8 +2529,8 @@ packages:
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
 
-  eslint-plugin-vue@9.25.0:
-    resolution: {integrity: sha512-tDWlx14bVe6Bs+Nnh3IGrD+hb11kf2nukfm6jLsmJIhmiRQ1SUaksvwY9U5MvPB0pcrg0QK0xapQkfITs3RKOA==}
+  eslint-plugin-vue@9.26.0:
+    resolution: {integrity: sha512-eTvlxXgd4ijE1cdur850G6KalZqk65k1JKoOI2d1kT3hr8sPD07j1q98FRFdNnpxBELGPWxZmInxeHGF/GxtqQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -3011,8 +3011,8 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  i18next@23.11.4:
-    resolution: {integrity: sha512-CCUjtd5TfaCl+mLUzAA0uPSN+AVn4fP/kWCYt/hocPUwusTpMVczdrRyOBUwk6N05iH40qiKx6q1DoNJtBIwdg==}
+  i18next@23.11.5:
+    resolution: {integrity: sha512-41pvpVbW9rhZPk5xjCX2TPJi2861LEig/YRhUkY+1FQ2IQPS0bKUDYnEqY8XPPbB48h1uIwLnP9iiEfuSl20CA==}
 
   iconv-corefoundation@1.1.7:
     resolution: {integrity: sha512-T10qvkw0zz4wnm560lOEg0PovVqUXuOFhhHAkixw8/sycy7TJt7v/RrkEKEQnAw2viPSJu6iAkErxnzR0g8PpQ==}
@@ -5963,7 +5963,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/osx-sign@1.2.0':
+  '@electron/osx-sign@1.3.0':
     dependencies:
       compare-version: 0.1.2
       debug: 4.3.4
@@ -5974,9 +5974,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/remote@2.1.2(electron@30.0.4)':
+  '@electron/remote@2.1.2(electron@30.0.6)':
     dependencies:
-      electron: 30.0.4
+      electron: 30.0.6
 
   '@electron/universal@1.5.1':
     dependencies:
@@ -6037,7 +6037,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       '@types/yargs': 17.0.32
       chalk: 4.1.2
 
@@ -6115,10 +6115,10 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@panter/vue-i18next@0.15.2(i18next@23.11.4)(vue@2.7.16)':
+  '@panter/vue-i18next@0.15.2(i18next@23.11.5)(vue@2.7.16)':
     dependencies:
       deepmerge: 2.2.1
-      i18next: 23.11.4
+      i18next: 23.11.5
       vue: 2.7.16
 
   '@pkgjs/parseargs@0.11.0':
@@ -6145,27 +6145,27 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/bonjour@3.5.13':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/cacheable-request@6.0.3':
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       '@types/responselike': 1.0.3
 
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.0
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/debug@4.1.12':
     dependencies:
@@ -6185,7 +6185,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.0':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       '@types/qs': 6.9.15
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -6199,7 +6199,7 @@ snapshots:
 
   '@types/fs-extra@9.0.13':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/html-minifier-terser@6.1.0': {}
 
@@ -6209,7 +6209,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -6227,7 +6227,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/mime@1.3.5': {}
 
@@ -6235,15 +6235,15 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
-  '@types/node@20.12.11':
+  '@types/node@20.12.12':
     dependencies:
       undici-types: 5.26.5
 
   '@types/plist@3.0.5':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       xmlbuilder: 15.1.1
     optional: true
 
@@ -6253,14 +6253,14 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/retry@0.12.0': {}
 
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -6269,19 +6269,19 @@ snapshots:
   '@types/serve-static@1.15.7':
     dependencies:
       '@types/http-errors': 2.0.4
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       '@types/send': 0.17.4
 
   '@types/sockjs@0.3.36':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/verror@1.10.10':
     optional: true
 
   '@types/ws@8.5.10':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
 
   '@types/yargs-parser@21.0.3': {}
 
@@ -6291,7 +6291,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
     optional: true
 
   '@vue/compiler-sfc@2.7.16':
@@ -6369,7 +6369,7 @@ snapshots:
       - walrus
       - whiskers
 
-  '@vue/eslint-config-standard@8.0.1(eslint-plugin-vue@9.25.0(eslint@7.32.0))(eslint@7.32.0)':
+  '@vue/eslint-config-standard@8.0.1(eslint-plugin-vue@9.26.0(eslint@7.32.0))(eslint@7.32.0)':
     dependencies:
       eslint: 7.32.0
       eslint-config-standard: 17.1.0(eslint-plugin-import@2.29.1(eslint@7.32.0))(eslint-plugin-n@15.7.0(eslint@7.32.0))(eslint-plugin-promise@6.1.1(eslint@7.32.0))(eslint@7.32.0)
@@ -6378,7 +6378,7 @@ snapshots:
       eslint-plugin-import: 2.29.1(eslint@7.32.0)
       eslint-plugin-n: 15.7.0(eslint@7.32.0)
       eslint-plugin-promise: 6.1.1(eslint@7.32.0)
-      eslint-plugin-vue: 9.25.0(eslint@7.32.0)
+      eslint-plugin-vue: 9.26.0(eslint@7.32.0)
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-typescript
@@ -6608,7 +6608,7 @@ snapshots:
       minimatch: 5.1.6
       read-config-file: 6.3.2
       sanitize-filename: 1.6.3
-      semver: 7.6.0
+      semver: 7.6.2
       tar: 6.2.1
       temp-file: 3.4.0
     transitivePeerDependencies:
@@ -6746,7 +6746,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  axios@1.6.8:
+  axios@1.7.1:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -7573,10 +7573,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@30.0.4:
+  electron@30.0.6:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -7826,7 +7826,7 @@ snapshots:
     dependencies:
       eslint: 7.32.0
 
-  eslint-plugin-vue@9.25.0(eslint@7.32.0):
+  eslint-plugin-vue@9.26.0(eslint@7.32.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@7.32.0)
       eslint: 7.32.0
@@ -7834,7 +7834,7 @@ snapshots:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.16
-      semver: 7.6.0
+      semver: 7.6.2
       vue-eslint-parser: 9.4.2(eslint@7.32.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -8441,7 +8441,7 @@ snapshots:
 
   human-signals@2.1.0: {}
 
-  i18next@23.11.4:
+  i18next@23.11.5:
     dependencies:
       '@babel/runtime': 7.24.5
 
@@ -8652,7 +8652,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -8660,13 +8660,13 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 20.12.11
+      '@types/node': 20.12.12
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -9785,7 +9785,7 @@ snapshots:
 
   simple-update-notifier@2.0.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.6.2
 
   slash@3.0.0: {}
 
@@ -10223,7 +10223,7 @@ snapshots:
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.6.0
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
 
