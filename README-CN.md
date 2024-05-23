@@ -67,7 +67,7 @@ git clone git@github.com:imfile-io/imfile-desktop.git
 
 ```bash
 cd imfile-desktop
-pnpm i
+yarn install
 ```
 
 天朝大陆用户建议使用淘宝的 npm 源
@@ -86,18 +86,18 @@ export SASS_BINARY_SITE='https://npm.taobao.org/mirrors/node-sass'
 ### 开发模式
 
 ```bash
-pnpm run dev
+yarn run dev
 ```
 
 ### 编译打包
 
 ```bash
-pnpm run build
+yarn run build
 ```
 #### 编译 Apple Silicon 版本
 
 ```bash
-pnpm run build:applesilicon
+yarn run build:applesilicon
 ```
 完成之后可以在项目的 `release` 目录看到编译打包好的应用文件
 

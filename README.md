@@ -67,7 +67,7 @@ git clone git@github.com:imfile-io/imfile-desktop.git
 
 ```bash
 cd imfile-desktop
-pnpm i
+yarn install
 ```
 
 > Error: Electron failed to install correctly, please delete node_modules/electron and try installing again
@@ -77,18 +77,18 @@ pnpm i
 ### Dev Mode
 
 ```bash
-pnpm run dev
+yarn run dev
 ```
 
 ### Build Release
 
 ```bash
-pnpm run build
+yarn run build
 ```
 #### Build for Apple Silicon
 
 ```bash
-pnpm run build:applesilicon
+yarn run build:applesilicon
 ```
 
 After building, the application will be found in the project's `release` directory.
