@@ -1,21 +1,24 @@
 <template>
-  <mo-drag-select
+  <!-- <mo-drag-select
     class="task-list"
     v-if="taskList.length > 0"
     attribute="attr"
     @change="handleDragSelectChange"
-  >
+  > -->
+  <div v-if="taskList.length > 0" class="mx-4">
     <div
       v-for="item in taskList"
       :key="item.gid"
       :attr="item.gid"
       :class="getItemClass(item)"
+      @click="()=>selectData(item.gid)"
     >
       <mo-task-item
         :task="item"
       />
     </div>
-  </mo-drag-select>
+  </div>
+  <!-- </mo-drag-select> -->
   <div class="no-task" v-else>
     <div class="no-task-inner">
       {{ $t('task.no-task') }}
@@ -25,7 +28,7 @@
 
 <script>
   import { mapState } from 'vuex'
-  import { cloneDeep } from 'lodash'
+  import { cloneDeep, pull } from 'lodash'
   import DragSelect from '@/components/DragSelect/Index'
   import TaskItem from './TaskItem'
 
@@ -48,6 +51,14 @@
       })
     },
     methods: {
+      selectData (gid) {
+        const selectedGidList = this.$store.state.task.selectedGidList
+        if (selectedGidList.includes(gid)) {
+          this.$store.dispatch('task/selectTasks', pull(selectedGidList, gid))
+        } else {
+          this.$store.dispatch('task/selectTasks', selectedGidList.concat(gid))
+        }
+      },
       handleDragSelectChange (selectedList) {
         this.selectedList = selectedList
         this.$store.dispatch('task/selectTasks', cloneDeep(selectedList))
@@ -75,7 +86,7 @@
 }
 .no-task {
   display: flex;
-  height: 100%;
+  height: 80%;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -85,7 +96,7 @@
 }
 .no-task-inner {
   width: 100%;
-  padding-top: 360px;
-  background: transparent url('~@/assets/no-task.svg') top center no-repeat;
+  padding-top: 160px;
+  background: transparent url('~@/assets/no-task.svg') center no-repeat;
 }
 </style>

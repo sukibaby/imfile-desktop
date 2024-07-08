@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Semina',
   'active': 'In corso',
   'waiting': 'In Pausa',
   'stopped': 'Terminate',
@@ -115,5 +116,9 @@ export default {
   'bt-download-complete-tips': 'Suggerimento: È possibile interrompere un\'attività per fermare il seeding',
   'bt-stopping-seeding-tip': 'Seeding fermato, ci vorrà un po\' di tempo per disconnettersi, per favore, aspetta...',
   'download-fail-message': 'Impossibile scaricare {{taskName}}',
-  'download-fail-notify': 'Download Fallito'
+  'download-fail-notify': 'Download Fallito',
+  'task-add':'Aggiungi attività',
+  'task-all-start' : 'Inizia tutto',
+  'task-all-stop' : 'metti in pausa tutto',
+  'task-not-data' : 'Non chiedere'
 }

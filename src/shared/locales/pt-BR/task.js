@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Semeadura',
   'active': 'Baixando',
   'waiting': 'Aguardando',
   'stopped': 'Parou',
@@ -115,5 +116,9 @@ export default {
   'bt-download-complete-tips': 'Dicas: você pode parar a tarefa para terminar a propagação',
   'bt-stopping-seeding-tip': 'Parando a propagação, levará algum tempo para desconectar, aguarde ...',
   'download-fail-message': '{{taskName}} falha no download',
-  'download-fail-notify': 'Falha no Download'
+  'download-fail-notify': 'Falha no Download',
+  'task-add':'Adicionar tarefa',
+  'task-all-start' : 'Iniciar tudo',
+  'task-all-stop' : 'pausar tudo',
+  'task-not-data' : 'Não pergunte'
 }

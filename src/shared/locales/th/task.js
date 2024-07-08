@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'การปลูก" หรือ ',
   'active': 'การดาวน์โหลด',
   'waiting': 'กำลังรอ',
   'stopped': 'หยุดแล้ว',
@@ -116,5 +117,9 @@ export default {
   'bt-download-complete-tips': 'เคล็ดลับ: คุณสามารถหยุดงานเพื่อสิ้นสุดการ seed ได้',
   'bt-stopping-seeding-tip': 'กำลังหยุดการ seed จะใช้เวลาสักพักในการตัดการเชื่อมต่อ โปรดรอสักครู่...',
   'download-fail-message': 'ไม่สามารถดาวน์โหลด {{taskName}}',
-  'download-fail-notify': 'ดาวน์โหลดล้มเหลว'
+  'download-fail-notify': 'ดาวน์โหลดล้มเหลว',
+  'task-add':'เพิ่มงาน',
+  'task-all-start' : 'เริ่มต้นทั้งหมด',
+  'task-all-stop' : 'หยุดทั้งหมด',
+  'task-not-data' : 'ไม่มีงาน'
 }

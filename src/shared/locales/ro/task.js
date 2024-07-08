@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'Semănat',
   'active': 'Se descarcă',
   'waiting': 'În aşteptare',
   'stopped': 'Oprite',
@@ -115,5 +116,9 @@ export default {
   'bt-download-complete-tips': 'Sfaturi: puteți opri o sarcină pentru a nu mai sta la "seed"',
   'bt-stopping-seeding-tip': 'Se oprește statul la seed, va dura ceva timp pentru a vă deconecta, vă rugăm să așteptați ...',
   'download-fail-message': 'Descărcarea nu a reușit {{taskName}}',
-  'download-fail-notify': 'Descărcarea nu a reușit'
+  'download-fail-notify': 'Descărcarea nu a reușit',
+  'task-add':'Adăugați sarcină',
+  'task-all-start' : 'Începe totul',
+  'task-all-stop' : 'pauză pe toate',
+  'task-not-data' : 'Nu întreba'
 }

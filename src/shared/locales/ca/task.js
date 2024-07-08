@@ -1,4 +1,5 @@
 export default {
+  'seeding': 'sembrar',
   'active': 'Descarregant',
   'waiting': 'Esperant',
   'stopped': 'Detinguda',
@@ -115,5 +116,9 @@ export default {
   'bt-download-complete-tips': 'Tips: Pot detenir una tasca per deixar de compartir',
   'bt-stopping-seeding-tip': 'Aturar la sembra, es necessitarà un temps per desconnectar-se, espereu...',
   'download-fail-message': 'No s\'ha pogut descarregar {{taskName}}',
-  'download-fail-notify': 'Descàrrega fallida'
+  'download-fail-notify': 'Descàrrega fallida',
+  'task-add':'Afegeix una tasca',
+  'task-all-start' : 'Comença tot',
+  'task-all-stop' : 'posar-ho tot en pausa',
+  'task-not-data' : 'Cap tasca'
 }

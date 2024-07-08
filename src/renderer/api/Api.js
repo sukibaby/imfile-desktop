@@ -47,10 +47,7 @@ export default class Api {
   }
 
   initClient () {
-    const {
-      rpcListenPort: port,
-      rpcSecret: secret
-    } = this.config
+    const { rpcListenPort: port, rpcSecret: secret } = this.config
     const host = ENGINE_RPC_HOST
     return new Aria2({
       host,
@@ -60,11 +57,12 @@ export default class Api {
   }
 
   closeClient () {
-    this.client.close()
+    this.client
+      .close()
       .then(() => {
         this.client = null
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('engine client close fail', err)
       })
   }
@@ -94,18 +92,18 @@ export default class Api {
     const config = {}
 
     if (!isEmpty(user)) {
-      console.info('[Motrix] save user config: ', user)
+      console.info('[imFile] save user config: ', user)
       config.user = user
     }
 
     if (!isEmpty(system)) {
-      console.info('[Motrix] save system config: ', system)
+      console.info('[imFile] save system config: ', system)
       config.system = system
       this.updateActiveTaskOption(system)
     }
 
     if (!isEmpty(others)) {
-      console.info('[Motrix] save config found illegal key: ', others)
+      console.info('[imFile] save config found illegal key: ', others)
     }
 
     ipcRenderer.send('command', 'application:save-preference', config)
@@ -123,10 +121,9 @@ export default class Api {
 
   getGlobalOption () {
     return new Promise((resolve) => {
-      this.client.call('getGlobalOption')
-        .then((data) => {
-          resolve(changeKeysToCamelCase(data))
-        })
+      this.client.call('getGlobalOption').then((data) => {
+        resolve(changeKeysToCamelCase(data))
+      })
     })
   }
 
@@ -135,23 +132,21 @@ export default class Api {
     const args = compactUndefined([gid])
 
     return new Promise((resolve) => {
-      this.client.call('getOption', ...args)
-        .then((data) => {
-          resolve(changeKeysToCamelCase(data))
-        })
+      this.client.call('getOption', ...args).then((data) => {
+        resolve(changeKeysToCamelCase(data))
+      })
     })
   }
 
   updateActiveTaskOption (options) {
-    this.fetchTaskList({ type: 'active' })
-      .then((data) => {
-        if (isEmpty(data)) {
-          return
-        }
+    this.fetchTaskList({ type: 'active' }).then((data) => {
+      if (isEmpty(data)) {
+        return
+      }
 
-        const gids = data.map((task) => task.gid)
-        this.batchChangeOption({ gids, options })
-      })
+      const gids = data.map((task) => task.gid)
+      this.batchChangeOption({ gids, options })
+    })
   }
 
   changeOption (params = {}) {
@@ -168,11 +163,7 @@ export default class Api {
   }
 
   addUri (params) {
-    const {
-      uris,
-      outs,
-      options
-    } = params
+    const { uris, outs, options } = params
     const tasks = uris.map((uri, index) => {
       const engineOptions = formatOptionsForEngine(options)
       if (outs && outs[index]) {
@@ -185,20 +176,14 @@ export default class Api {
   }
 
   addTorrent (params) {
-    const {
-      torrent,
-      options
-    } = params
+    const { torrent, options } = params
     const engineOptions = formatOptionsForEngine(options)
     const args = compactUndefined([torrent, [], engineOptions])
     return this.client.call('addTorrent', ...args)
   }
 
   addMetalink (params) {
-    const {
-      metalink,
-      options
-    } = params
+    const { metalink, options } = params
     const engineOptions = formatOptionsForEngine(options)
     const args = compactUndefined([metalink, engineOptions])
     return this.client.call('addMetalink', ...args)
@@ -209,17 +194,24 @@ export default class Api {
     const activeArgs = compactUndefined([keys])
     const waitingArgs = compactUndefined([offset, num, keys])
     return new Promise((resolve, reject) => {
-      this.client.multicall([
-        ['aria2.tellActive', ...activeArgs],
-        ['aria2.tellWaiting', ...waitingArgs]
-      ]).then((data) => {
-        console.log('[Motrix] fetch downloading task list data:', data)
-        const result = mergeTaskResult(data)
-        resolve(result)
-      }).catch((err) => {
-        console.log('[Motrix] fetch downloading task list fail:', err)
-        reject(err)
-      })
+      this.client
+        .multicall([
+          ['aria2.tellActive', ...activeArgs],
+          ['aria2.tellWaiting', ...waitingArgs]
+        ])
+        .then((data) => {
+          console.log('[imFile] fetch downloading task list data:', data)
+          const result = mergeTaskResult(data)
+          resolve(
+            result.filter(
+              (list) => list.completedLength !== list.totalLength
+            )
+          )
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch downloading task list fail:', err)
+          reject(err)
+        })
     })
   }
 
@@ -235,20 +227,78 @@ export default class Api {
     return this.client.call('tellStopped', ...args)
   }
 
+  fetchDoneTaskList (params = {}) {
+    const { offset = 0, num = 20, keys } = params
+    const args = compactUndefined([offset, num, keys])
+    return this.client.call('tellDone', ...args)
+  }
+
   fetchActiveTaskList (params = {}) {
     const { keys } = params
     const args = compactUndefined([keys])
     return this.client.call('tellActive', ...args)
   }
 
+  fetchSeedingTaskList (params = {}) {
+    const { keys } = params
+    const args = compactUndefined([keys])
+    return new Promise((resolve, reject) => {
+      this.client
+        .call('tellActive', ...args)
+        .then((data) => {
+          console.log('[imFile] fetch seeding task list data:', data)
+          if (data.length > 0) {
+            resolve(
+              data.filter((list) => list.completedLength === list.totalLength)
+            )
+          } else {
+            resolve([])
+          }
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch seeding task list fail:', err)
+          reject(err)
+        })
+    })
+  }
+
+  fetchAllTaskList (params = {}) {
+    const { offset = 0, num = 20, keys } = params
+    const activeArgs = compactUndefined([keys])
+    const waitingArgs = compactUndefined([offset, num, keys])
+    return new Promise((resolve, reject) => {
+      this.client
+        .multicall([
+          ['aria2.tellActive', ...activeArgs],
+          ['aria2.tellWaiting', ...waitingArgs],
+          ['aria2.tellStopped', ...waitingArgs]
+        ])
+        .then((data) => {
+          console.log('[imFile] fetch downloading task list data:', data)
+          // const result = mergeTaskResult(data)
+          resolve(
+            data
+          )
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch downloading task list fail:', err)
+          reject(err)
+        })
+    })
+  }
+
   fetchTaskList (params = {}) {
     const { type } = params
     switch (type) {
+    case 'seeding':
+      return this.fetchSeedingTaskList(params)
     case 'active':
       return this.fetchDownloadingTaskList(params)
     case 'waiting':
       return this.fetchWaitingTaskList(params)
     case 'stopped':
+      return this.fetchStoppedTaskList(params)
+    case 'done':
       return this.fetchStoppedTaskList(params)
     default:
       return this.fetchDownloadingTaskList(params)
@@ -266,22 +316,25 @@ export default class Api {
     const statusArgs = compactUndefined([gid, keys])
     const peersArgs = compactUndefined([gid])
     return new Promise((resolve, reject) => {
-      this.client.multicall([
-        ['aria2.tellStatus', ...statusArgs],
-        ['aria2.getPeers', ...peersArgs]
-      ]).then((data) => {
-        console.log('[Motrix] fetchTaskItemWithPeers:', data)
-        const result = data[0] && data[0][0]
-        const peers = data[1] && data[1][0]
-        result.peers = peers || []
-        console.log('[Motrix] fetchTaskItemWithPeers.result:', result)
-        console.log('[Motrix] fetchTaskItemWithPeers.peers:', peers)
+      this.client
+        .multicall([
+          ['aria2.tellStatus', ...statusArgs],
+          ['aria2.getPeers', ...peersArgs]
+        ])
+        .then((data) => {
+          console.log('[imFile] fetchTaskItemWithPeers:', data)
+          const result = data[0] && data[0][0]
+          const peers = data[1] && data[1][0]
+          result.peers = peers || []
+          console.log('[imFile] fetchTaskItemWithPeers.result:', result)
+          console.log('[imFile] fetchTaskItemWithPeers.peers:', peers)
 
-        resolve(result)
-      }).catch((err) => {
-        console.log('[Motrix] fetch downloading task list fail:', err)
-        reject(err)
-      })
+          resolve(result)
+        })
+        .catch((err) => {
+          console.log('[imFile] fetch downloading task list fail:', err)
+          reject(err)
+        })
     })
   }
 

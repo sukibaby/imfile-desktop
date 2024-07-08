@@ -15,6 +15,7 @@ import Msg from '@/components/Msg'
 import { commands } from '@/components/CommandManager/instance'
 import TrayWorker from '@/workers/tray.worker'
 
+import '@/components/Theme/tailwind-output.css'
 import '@/components/Theme/Index.scss'
 
 const updateTray = is.renderer()
@@ -38,13 +39,13 @@ function initTrayWorker () {
     switch (type) {
     case 'initialized':
     case 'log':
-      console.log('[Motrix] Log from Tray Worker: ', payload)
+      console.log('[imFile] Log from Tray Worker: ', payload)
       break
     case 'tray:drawed':
       updateTray(payload)
       break
     default:
-      console.warn('[Motrix] Tray Worker unhandled message type:', type, payload)
+      console.warn('[imFile] Tray Worker unhandled message type:', type, payload)
     }
   })
 
@@ -102,7 +103,7 @@ function init (config) {
 
 store.dispatch('preference/fetchPreference')
   .then((config) => {
-    console.info('[Motrix] load preference:', config)
+    console.info('[imFile] load preference:', config)
     init(config)
   })
   .catch((err) => {
