@@ -79,20 +79,36 @@ export const bitfieldToGraphic = (text) => {
   return result
 }
 
+function percentEncodedToBuffer (str) {
+  str = str.trim()
+  if (!str.includes('%') && str.length === 20) {
+    return Buffer.from(str, 'binary')
+  }
+  const bytes = []
+  for (let i = 0; i < str.length;) {
+    if (str[i] === '%' && i + 2 < str.length) {
+      bytes.push(parseInt(str.substr(i + 1, 2), 16))
+      i += 3
+    } else {
+      bytes.push(str.charCodeAt(i))
+      i += 1
+    }
+  }
+  return Buffer.from(bytes)
+}
+
 export const peerIdParser = (str) => {
   if (!str || str === UNKNOWN_PEERID) {
     return UNKNOWN_PEERID_NAME
   }
 
   let parsed = {}
-  let decodedStr
+  let buffer
   try {
-    // decodeURI or decodeURIComponent cannot parse '%2DUT360W%2D%92%B6%EBh%1F%A1%DBfo%F6%D5I'
-    decodedStr = unescape(str)
-    const buffer = Buffer.from(decodedStr, 'binary')
+    buffer = percentEncodedToBuffer(str)
     parsed = bitTorrentPeerId(buffer)
   } catch (e) {
-    console.log('peerIdParser.fail', e, str, decodedStr)
+    console.log('peerIdParser.fail', e, str, buffer)
     return UNKNOWN_PEERID_NAME
   }
 
