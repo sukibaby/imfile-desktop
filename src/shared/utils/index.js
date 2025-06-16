@@ -79,6 +79,13 @@ export const bitfieldToGraphic = (text) => {
   return result
 }
 
+// decodeURI or decodeURIComponent cannot parse '%2DUT360W%2D%92%B6%EBh%1F%A1%DBfo%F6%D5I'
+export function unescapeString (str) {
+  return str.replace(/%([0-9A-Fa-f]{2})/g, function (match, hex) {
+    return String.fromCharCode(parseInt(hex, 16))
+  })
+}
+
 export const peerIdParser = (str) => {
   if (!str || str === UNKNOWN_PEERID) {
     return UNKNOWN_PEERID_NAME
@@ -87,8 +94,7 @@ export const peerIdParser = (str) => {
   let parsed = {}
   let decodedStr
   try {
-    // decodeURI or decodeURIComponent cannot parse '%2DUT360W%2D%92%B6%EBh%1F%A1%DBfo%F6%D5I'
-    decodedStr = unescape(str)
+    decodedStr = unescapeString(str)
     const buffer = Buffer.from(decodedStr, 'binary')
     parsed = bitTorrentPeerId(buffer)
   } catch (e) {
