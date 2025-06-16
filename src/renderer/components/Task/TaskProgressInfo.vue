@@ -17,10 +17,10 @@
           <span>{{ task.downloadSpeed | bytesToSize }}/s</span>
         </div>
         <div class="task-speed-text hidden-sm-and-down" v-if="remaining > 0">
-          <span>
+          <span class="remaining-label-value">
+            {{ $t('task.remaining-prefix') }}
             {{
               remaining | timeFormat({
-                prefix: $t('task.remaining-prefix'),
                 i18n: {
                   'gt1d': $t('app.gt1d'),
                   'hour': $t('app.hour'),
@@ -92,44 +92,38 @@
 </script>
 
 <style lang="scss">
-.task-progress-info {
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  min-height: 0.875rem;
-  color: #9B9B9B;
-  margin-top: 0.5rem;
-  i {
-    font-style: normal;
-  }
-}
-.task-progress-info-left {
-  min-height: 0.875rem;
-  text-align: left;
-}
-
 .task-speed-info {
-  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.75rem;
+  color: #9B9B9B;
+  width: 100%;
+
   & > .task-speed-text {
-    margin-left: 0.375rem;
-    font-size: 0;
+    margin-left: 0;
+    margin-bottom: 0.375rem;
+    font-size: 0.75rem;
     line-height: 0.875rem;
-    vertical-align: middle;
-    display: inline-block;
-    &:first-of-type {
-      margin-left: 0;
-    }
-    & > i, & > span {
-      height: 0.875rem;
-      line-height: 0.875rem;
-      display: inline-block;
-      vertical-align: middle;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
     & > i {
       margin-right: 0.125rem;
     }
-    & > span {
-      font-size: 0.75rem;
-    }
   }
+}
+
+.remaining-label-value {
+  white-space: nowrap;
+}
+
+.task-progress-info-left {
+  min-height: 0.875rem;
+  text-align: left;
 }
 </style>
