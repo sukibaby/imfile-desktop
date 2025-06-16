@@ -8,7 +8,7 @@ const level = is.production() ? 'info' : 'silly'
 logger.transports.file.level = level
 
 if (IS_PORTABLE) {
-  logger.transports.file.resolvePath = () => join(PORTABLE_EXECUTABLE_DIR, 'main.log')
+  logger.transports.file.resolvePathFn = () => join(PORTABLE_EXECUTABLE_DIR, 'main.log')
 }
 
 logger.info('[imFile] Logger init')
