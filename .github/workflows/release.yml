@@ -49,7 +49,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-linux
-          path: release/**/*
+          path: |
+            release/*.AppImage
+            release/*.deb
+            release/*.rpm
+            release/*.snap
           if-no-files-found: error
           retention-days: 90
 
@@ -90,7 +94,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-macos
-          path: release/**/*
+          path: |
+            release/*.dmg
+            release/*.zip
           if-no-files-found: error
           retention-days: 90
 
@@ -133,7 +139,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: release-windows
-          path: release/**/*
+          path: |
+            release/*.exe
+            release/*.appx
+            release/*.zip
           if-no-files-found: error
           retention-days: 90
 
