@@ -15,6 +15,10 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
+      - name: Set build version from date
+        run: |
+          VERSION=$(date +%Y%m%d)
+          npm version $VERSION --no-git-tag-version
 
       - name: Cache node modules
         id: cache-npm
