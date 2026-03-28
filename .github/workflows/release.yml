@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - new
 
 jobs:
   release-linux:
@@ -183,5 +182,5 @@ jobs:
           gh release create master-${{ github.run_number }} \
             --title "imFile build ${{ github.run_number }}" \
             --target ${{ github.sha }} \
-            --notes "Automated build triggered by push to master/new branch." \
+            --notes "Automated build triggered by push to master branch." \
             release-artifacts/**/*
