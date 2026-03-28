@@ -47,7 +47,7 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: node .electron-vue/build.js && npx electron-builder --publish=never --config.buildVersion=$(date +%Y-%m-%d)-build-${{ github.run_number }}
+      - run: node .electron-vue/build.js && npx electron-builder --publish=never
 
       - name: Upload Linux build artifacts
         uses: actions/upload-artifact@v4
@@ -70,6 +70,10 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v4
 
+      - name: Set build version from date
+        run: |
+          VERSION=$(date +%Y.%m.%d)
+          npm version $VERSION --no-git-tag-version
 
       - name: Cache node modules
         id: cache-npm
@@ -92,7 +96,7 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: node .electron-vue/build.js && npx electron-builder --publish=never --config.buildVersion=$(date +%Y-%m-%d)-build-${{ github.run_number }}
+      - run: node .electron-vue/build.js && npx electron-builder --publish=never
 
       - name: Upload macOS build artifacts
         uses: actions/upload-artifact@v4
@@ -115,6 +119,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set build version from date
+        run: |
+          $version = Get-Date -Format "yyyy.MM.dd"
+          npm version $version --no-git-tag-version
 
       - name: Cache node modules
         id: cache-npm
@@ -137,7 +145,7 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: node .electron-vue/build.js && npx electron-builder --publish=never --config.buildVersion=$(date +%Y-%m-%d)-build-${{ github.run_number }}
+      - run: node .electron-vue/build.js && npx electron-builder --publish=never
 
       - name: Upload Windows build artifacts
         uses: actions/upload-artifact@v4
