@@ -1,11 +1,16 @@
 name: Build/release
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   release-linux:
     runs-on: ubuntu-latest
     environment: release
+    permissions:
+      contents: read
     env:
       GH_TOKEN: ${{ secrets.gh_token }}
       GITHUB_TOKEN: ${{ secrets.gh_token }}
@@ -40,12 +45,20 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run release
+      - run: yarn run build
+
+      - name: Upload Linux build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-linux
+          path: release/**/*
+          if-no-files-found: error
+          retention-days: 90
 
   release-macos:
     runs-on: macos-latest
     permissions:
-      contents: write
+      contents: read
     environment: release
     env:
       GH_TOKEN: ${{ secrets.gh_token }}
@@ -76,11 +89,21 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run release
+      - run: yarn run build
+
+      - name: Upload macOS build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-macos
+          path: release/**/*
+          if-no-files-found: error
+          retention-days: 90
 
   release-windows:
     runs-on: windows-latest
     environment: release
+    permissions:
+      contents: read
     env:
       gh_token: ${{ secrets.gh_token }}
       github_token: ${{ secrets.gh_token }}
@@ -112,4 +135,49 @@ jobs:
           cache: 'npm'
 
       - run: yarn install --network-timeout 100000
-      - run: yarn run release
+      - run: yarn run build
+
+      - name: Upload Windows build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-windows
+          path: release/**/*
+          if-no-files-found: error
+          retention-days: 90
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs:
+      - release-linux
+      - release-macos
+      - release-windows
+    permissions:
+      contents: write
+    steps:
+      - name: Prepare Linux artifacts for release
+        uses: actions/download-artifact@v4
+        with:
+          name: release-linux
+          path: release-artifacts/linux
+
+      - name: Prepare macOS artifacts for release
+        uses: actions/download-artifact@v4
+        with:
+          name: release-macos
+          path: release-artifacts/macos
+
+      - name: Prepare Windows artifacts for release
+        uses: actions/download-artifact@v4
+        with:
+          name: release-windows
+          path: release-artifacts/windows
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: automatic-build-${{ github.run_number }}
+          name: Automatic Build ${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          prerelease: true
+          generate_release_notes: true
+          files: release-artifacts/**/*
